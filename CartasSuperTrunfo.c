@@ -5,8 +5,8 @@ int main(){
     //Declarar variaveis
     int populacao,populacao2;
     int pontos_turisticos,pontos_turisticos2;
-    float area,area2;
-    float pib,pib2;
+    float area,area2,densidade,densidade2;
+    float pib,pib2,pib_pc,pib_pc2;
     char nome[10],nome2[10],codigo[10],codigo2[10],cidade[20],cidade2[20],carta[500],carta2[500];
 
     // Pedir ao user as infos
@@ -46,14 +46,19 @@ int main(){
     printf("Digite o numero de pontos turisticos da cidade 2: \n");
     scanf("%d", &pontos_turisticos2);
 
-    
+    //calculo de variaveis baseado nos inputs de user
+    densidade = populacao / area;
+    densidade2 = populacao2 / area2;
+    pib_pc = pib / populacao;
+    pib_pc2 = pib2 / populacao2;
+
     //Consolidar as infos nas variaveis cartas
     sprintf(carta,
-        " Estado: %s - Codigo: %s01\n Cidade: %s - Populacao: %d\n Area: %.2f - PIB: %.2f\n Pontos turisticos: %d\n", 
-    nome, nome, cidade, populacao, area, pib, pontos_turisticos);
+        " Estado: %s - Codigo: %s01\n Cidade: %s - Populacao: %d\n Area: %.2f - PIB: %.2f\n Pontos turisticos: %d\n Densidade Populacional: %.2f - PIB per capita: %.2f\n", 
+    nome, nome, cidade, populacao, area, pib, pontos_turisticos,densidade,pib_pc);
     sprintf(carta2,
-        " Estado: %s - Codigo: %s01\n Cidade: %s - Populacao: %d\n Area: %.2f - PIB: %.2f\n Pontos turisticos: %d\n", 
-    nome2, nome2, cidade2, populacao2, area2, pib2, pontos_turisticos2);
+        " Estado: %s - Codigo: %s01\n Cidade: %s - Populacao: %d\n Area: %.2f - PIB: %.2f\n Pontos turisticos: %d\n Densidade Populacional: %.2f - PIB per capita: %.2f\n", 
+    nome2, nome2, cidade2, populacao2, area2, pib2, pontos_turisticos2, densidade2, pib_pc2);
     
     //imprime as cartas
     printf("\n ------- Carta1 -------\n");
