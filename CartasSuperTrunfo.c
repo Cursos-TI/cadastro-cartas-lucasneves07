@@ -3,7 +3,7 @@
 
 int main(){
     //Declarar variaveis
-    int populacao,populacao2;
+    unsigned long int populacao,populacao2;
     int pontos_turisticos,pontos_turisticos2;
     float area,area2,densidade,densidade2;
     float pib,pib2,pib_pc,pib_pc2;
@@ -67,6 +67,17 @@ int main(){
     printf("\n ------- Carta2 -------\n");
     printf("%s\n",carta2);
 
+    //calcular superpoder e comparar
+    float superpoder = populacao + pontos_turisticos + area + densidade + pib + pib_pc;
 
+    float superpoder2 = populacao2 + pontos_turisticos2 + area2 + densidade2 + pib2 + pib_pc2;
 
+    printf("\n ***** Comparacao das cartas [1 ganha a carta1 e 0 ganha carta 2] *****\n");
+    printf("\n Populacao: %d - Pontos Turisiticos: %d\n", (populacao > populacao2), (pontos_turisticos > pontos_turisticos2));
+    printf("\n Area: %d - Densidade populacional: %d\n", (area > area2), (densidade < densidade2));
+    printf("\n PIB: %d - PIB per capita: %d\n", (pib > pib2), (pib_pc > pib_pc2));
+    printf("\n Pontuacao geral A: %f - Pontuacao geral B: %f\n", superpoder, superpoder2);
+    printf("\n Vencedor geral: %d\n", (superpoder>superpoder2));
+
+    
 }
